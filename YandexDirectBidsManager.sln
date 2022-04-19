@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YandexDirectBidsManager", "YandexDirectBidsManager\YandexDirectBidsManager.csproj", "{781BF51F-1BB3-49E7-B647-BFD5D8F4A894}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BidsManager.Database", "BidsManager.Database\BidsManager.Database.csproj", "{4839E9E6-7202-4505-B58C-A0EA3D682A33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YandexDirectAPI", "YandexDirectAPI\YandexDirectAPI.csproj", "{1D65AF3D-8684-4CA2-A483-AC138A147B97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_Yandex_Direct", "API_Yandex_Direct\API_Yandex_Direct.csproj", "{584BB09D-95FF-4DDE-BE53-5E637D46F77E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{781BF51F-1BB3-49E7-B647-BFD5D8F4A894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{781BF51F-1BB3-49E7-B647-BFD5D8F4A894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{781BF51F-1BB3-49E7-B647-BFD5D8F4A894}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{781BF51F-1BB3-49E7-B647-BFD5D8F4A894}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4839E9E6-7202-4505-B58C-A0EA3D682A33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4839E9E6-7202-4505-B58C-A0EA3D682A33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4839E9E6-7202-4505-B58C-A0EA3D682A33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4839E9E6-7202-4505-B58C-A0EA3D682A33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D65AF3D-8684-4CA2-A483-AC138A147B97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D65AF3D-8684-4CA2-A483-AC138A147B97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D65AF3D-8684-4CA2-A483-AC138A147B97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D65AF3D-8684-4CA2-A483-AC138A147B97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{584BB09D-95FF-4DDE-BE53-5E637D46F77E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{584BB09D-95FF-4DDE-BE53-5E637D46F77E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{584BB09D-95FF-4DDE-BE53-5E637D46F77E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{584BB09D-95FF-4DDE-BE53-5E637D46F77E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6B89135-49A0-4427-A0AA-574A89AC1605}
+	EndGlobalSection
+EndGlobal

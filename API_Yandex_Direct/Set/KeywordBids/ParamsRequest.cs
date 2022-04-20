@@ -1,4 +1,5 @@
-﻿using System;
+﻿using API_Yandex_Direct.Get.Shared;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -8,8 +9,9 @@ using System.Threading.Tasks;
 namespace API_Yandex_Direct.Set.KeywordBids
 {
     [DataContract]
-    public class ParamsRequest
+    public class ParamsRequest 
     {
+
         /// <summary>
         /// Ставки и/или приоритеты.
         /// </summary>

@@ -1,4 +1,5 @@
 ﻿using API_Yandex_Direct.ApiConnect.Infrastructure;
+using API_Yandex_Direct.Get.Bids;
 using API_Yandex_Direct.Set.KeywordBids;
 using System;
 using System.Collections.Generic;
@@ -12,9 +13,11 @@ namespace API_Yandex_Direct.Set
     {
         public Result5 SetBidsRequest(KeywordBidSetItem[] keywordBidSetItems, ApiConnect.ApiConnect apiConnect)
         {
-            ParamsRequest paramsRequest = new ParamsRequest { KeywordBids = new KeywordBidSetItem[] { } };
+            var paramsRequest = new Set.KeywordBids.ParamsRequest()
+            {
+                KeywordBids = keywordBidSetItems,
+            };
             string[] Headers = new string[] { };
-            paramsRequest.KeywordBids = keywordBidSetItems;
             var a = apiConnect.SetResult5(paramsRequest, "keywordbids", "set", ref Headers);
             return a;
         }

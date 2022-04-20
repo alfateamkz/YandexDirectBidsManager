@@ -60,7 +60,9 @@ namespace API_Yandex_Direct.ApiConnect
         /// <param name="Headers">Заголовки запроса</param>
         /// <returns></returns>
         public Result5 GetResult5(dynamic paramsRequest, string ObjectRequest, string Metod, ref string[] Headers)
-        { return new ApiConnect5(UserRequest, UrlDirect).Get(paramsRequest, ObjectRequest, Metod, ref Headers); }
+        { 
+            return new ApiConnect5(UserRequest, UrlDirect).Get(paramsRequest, ObjectRequest, Metod, ref Headers);
+        }
 
         /// <summary>
         /// Вызов к Api для отправки новых данных
@@ -71,7 +73,9 @@ namespace API_Yandex_Direct.ApiConnect
         /// <param name="Headers">Заголовки запроса</param>
         /// <returns></returns>
         public Result5 SetResult5(dynamic paramsRequest, string ObjectRequest, string Metod, ref string[] Headers)
-        { return new ApiConnect5(UserRequest, UrlDirect).Set(paramsRequest, ObjectRequest, Metod, ref Headers); }
+        {
+            return new ApiConnect5(UserRequest, UrlDirect).Set(paramsRequest, ObjectRequest, Metod, ref Headers);
+        }
 
         /// <summary>
         /// Вызов к Api для получения рапортов 

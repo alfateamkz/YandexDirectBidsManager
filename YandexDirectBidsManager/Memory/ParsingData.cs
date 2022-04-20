@@ -4,19 +4,20 @@ namespace YandexDirectBidsManager.Memory
 {
     public static class ParsingData
     {
-        public static KeywordClass[] LastHourParsing { get; private set; }
-        public static KeywordClass[] ActualParsing { get; private set; }
+        public static Dictionary<string, KeywordClass[]> LastHourParsing { get; private set; } = new Dictionary<string, KeywordClass[]>();
+        public static Dictionary<string, KeywordClass[]> ActualParsing { get; private set; } = new Dictionary<string, KeywordClass[]>();
 
-        public static void SetParsedData(KeywordClass[] data)
+        public static void SetParsedData(string token,KeywordClass[] data)
         {
-            if (ActualParsing == null)
+            if (!ActualParsing.ContainsKey(token))
             {
-                ActualParsing = data;
+                ActualParsing.Add(token,data);
             }
             else
             {
-                LastHourParsing = ActualParsing.ToArray();
-                ActualParsing = data;
+                var found = ActualParsing[token];
+                LastHourParsing[token] = found;
+                ActualParsing[token] = data;
             }
         }
     }

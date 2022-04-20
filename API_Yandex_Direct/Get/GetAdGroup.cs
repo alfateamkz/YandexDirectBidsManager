@@ -9,7 +9,10 @@ namespace API_Yandex_Direct.Get
     {
 
         public Model.AdGroup[] GetAdGroups(ParamsRequest paramsRequest, ApiConnect.ApiConnect apiConnect)
-        { return apiConnect.GetResult5(paramsRequest, "adgroups", "get", ref Headers).AdGroups; }
+        {
+            var res = apiConnect.GetResult5(paramsRequest, "adgroups", "get", ref Headers);
+            return res.AdGroups;
+        }
 
         public Model.AdGroup[] GetAdGroups(long[] CampaignIds, ApiConnect.ApiConnect apiConnect)
         {

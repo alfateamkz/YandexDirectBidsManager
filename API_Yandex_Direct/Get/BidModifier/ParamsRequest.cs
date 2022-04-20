@@ -7,7 +7,7 @@ namespace API_Yandex_Direct.Get.BidModifier
     [DataContract]
     public class ParamsRequest : ParamsRequestAbstract
     {
-        public ParamsRequest(FieldNamesEnum[] enumsFieldNames) : base(enumsFieldNames as Array) { }
+        public ParamsRequest(Array enumsFieldNames) : base(enumsFieldNames) { }
         /// <summary>
         /// Критерий отбора групп.
         /// </summary>

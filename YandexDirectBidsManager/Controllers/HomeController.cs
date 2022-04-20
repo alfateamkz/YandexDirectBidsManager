@@ -26,7 +26,7 @@ namespace YandexDirectBidsManager.Controllers
             return View();
         }
 
-        [Route("Registration")]
+        [Route("RRRRRRRegistration")]
         public IActionResult Registration()
         {
             return View();

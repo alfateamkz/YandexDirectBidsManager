@@ -25,8 +25,22 @@ namespace API_Yandex_Direct.Get
         /// <returns>Поискове фразы</returns>
         public Model.KeywordClass[] GetKeywords(long[] AdGroupIds, ApiConnect.ApiConnect apiConnect)
         {
-            ParamsRequest paramsRequest = new ParamsRequest(new FieldNamesEnum[] { FieldNamesEnum.Id, FieldNamesEnum.Keyword })
-            { SelectionCriteria = new KeywordsSelectionCriteria { AdGroupIds = AdGroupIds } };
+            ParamsRequest paramsRequest = new ParamsRequest(new FieldNamesEnum[] 
+            { 
+                FieldNamesEnum.Id,
+                FieldNamesEnum.Keyword ,
+                FieldNamesEnum.CampaignId,
+                FieldNamesEnum.StatisticsSearch,
+                FieldNamesEnum.StatisticsNetwork,
+                FieldNamesEnum.StrategyPriority,
+                FieldNamesEnum.Status,
+                FieldNamesEnum.ContextBid,
+                FieldNamesEnum.Bid
+            })
+            { 
+                SelectionCriteria = new KeywordsSelectionCriteria {
+                AdGroupIds = AdGroupIds }
+            };
             return GetKeywords(paramsRequest, apiConnect);
         }
      

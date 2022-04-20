@@ -3,6 +3,7 @@ using BidsManager.Database.Modules;
 using Microsoft.AspNetCore.Mvc;
 using OfficeOpenXml;
 using YandexDirectBidsManager.Extensions;
+using YandexDirectBidsManager.Memory;
 using YandexDirectBidsManager.ViewModels;
 
 namespace YandexDirectBidsManager.Controllers
@@ -31,6 +32,10 @@ namespace YandexDirectBidsManager.Controllers
         {
             var user = await this.GetAuthorizedUser();
             await YandexDirectAccountsModule.CreateAccount(user, account);
+            if(user.UserData.SelectedYandexDirectAccount == null)
+            {
+               // user.UserData.SelectedYandexDirectAccount = user.YandexDirectAccounts.FirstOrDefault();
+            }
             return await Dashboard();
         }
         [HttpDelete]
@@ -139,7 +144,7 @@ namespace YandexDirectBidsManager.Controllers
 
             }
 
-            return await Dashboard();
+            return RedirectToAction("Dashboard", "Dashboard");
         }
 
         #endregion

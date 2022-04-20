@@ -29,6 +29,8 @@ namespace API_Yandex_Direct.Get.Shared
     [DataContract]
     public abstract class ParamsRequestAbstractNotPage
     {
+        public ParamsRequestAbstractNotPage() { }
+
         public ParamsRequestAbstractNotPage(Array enumsFieldNames)
 
         {            FieldNames = Convert.EnumArrayToStringArray(enumsFieldNames);        }
@@ -36,7 +38,7 @@ namespace API_Yandex_Direct.Get.Shared
         /// Имена параметров верхнего уровня, которые требуется получить.
         /// </summary>
         [DataMember]
-        public string[] FieldNames { get; set; }
+        public string[] FieldNames { get; set; } = new string[0];
     }
 
 

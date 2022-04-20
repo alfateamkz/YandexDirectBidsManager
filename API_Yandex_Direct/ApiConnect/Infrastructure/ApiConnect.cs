@@ -39,7 +39,7 @@ namespace API_Yandex_Direct.ApiConnect.Infrastructure
 
             HttpWebResponse resp = null;
 
-            try { resp = (HttpWebResponse)рttpWebRequest.GetResponse(); }
+            try { resp = (HttpWebResponse)рttpWebRequest?.GetResponse(); }
             catch (WebException ex) { if (ex.Status == WebExceptionStatus.ProtocolError) { resp = ex.Response as HttpWebResponse; } }
 
             Stream responseStream = resp.GetResponseStream();
@@ -86,8 +86,13 @@ namespace API_Yandex_Direct.ApiConnect.Infrastructure
                 if ((requestObj as RequestObjectV5).Params is null)
                 { SetBodyRequest = "Params == null не допустимо"; return null; }
 
-                if ((requestObj as RequestObjectV5).Params.FieldNames.Length == 0)
-                { SetBodyRequest = "ParamsRequest.FieldNames.Length = 0 не допустимо"; return null; }
+
+                try
+                {
+                    if ((requestObj as RequestObjectV5).Params.FieldNames.Length == 0)
+                    { SetBodyRequest = "ParamsRequest.FieldNames.Length = 0 не допустимо"; return null; }
+                }
+                catch { }
             }
             else
             {

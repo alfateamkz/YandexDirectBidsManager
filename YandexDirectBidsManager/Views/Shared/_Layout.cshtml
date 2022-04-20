@@ -1,4 +1,5 @@
 ﻿@using BidsManager.Database.Models
+@using YandexDirectAPI
 @using YandexDirectBidsManager.ViewModels
 
 @model BaseDashboardVM
@@ -768,6 +769,10 @@
                         <label class="col-sm-2 control-label text-right ">Название (для себя)</label>
                         <div class="col-sm-10 popup_item"><input id="token_title" type="text" required class="form-control" name="Title"></div>
                      </div>
+                    <div class="form-group popup-item">
+                        <label class="col-sm-2 control-label text-right ">Yandex.Direct логин</label>
+                        <div class="col-sm-10 popup_item"><input id="token_login" type="text" required class="form-control" name="Login"></div>
+                     </div>
                      <div class="form-group popup-item">
                         <label class="col-sm-2 control-label text-right ">OAuth токен</label>
                         <div class="col-sm-10 popup_item"><input id="token_oauth" type="text" required class="form-control" name="Token"></div>
@@ -775,8 +780,8 @@
                    </div>
                    <!-- Modal footer -->
                    <div class="modal-footer">
-                        <a href="https://yandex.ru/dev/direct/doc/start/token.html" target="_blank">
-                            <button type="button" class="btn btn-warning popup_item">Как получить токен</button>
+                        <a href="https://oauth.yandex.ru/authorize?response_type=token&client_id=@YandexDirect.CLIENT_ID" target="_blank">
+                            <button type="button" class="btn btn-warning popup_item">Получить токен</button>
                         </a>
                         <button type="button" onclick="addApiKey()" class="btn btn-primary popup_item" data-dismiss="modal">Добавить</button>
                         <button type="button" class="btn btn-light popup_item" data-dismiss="modal">Отмена</button>
@@ -831,8 +836,9 @@
     <script>
         async function addApiKey(){
              let key = {
-              OAuthToken: document.getElementById('token_oauth').value,
-              Title: document.getElementById('token_title').value,
+                 OAuthToken: document.getElementById('token_oauth').value,
+                 Title: document.getElementById('token_title').value,
+                 Login: document.getElementById('token_login').value,
             };
 
             let response = await fetch('/Dashboard/CreateYandexDirectAccount', {
